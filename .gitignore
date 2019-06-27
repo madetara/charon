@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# VS Code settings dir
+.vscode/
+
+# Produced by telethon
+*.session
