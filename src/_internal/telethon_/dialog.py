@@ -12,6 +12,22 @@ class Dialog_(abc.ABC):
     def archive(self):
         pass
 
+    @abc.abstractmethod
+    def archived(self) -> bool:
+        pass
+
+    @abc.abstractproperty
+    def name(self) -> str:
+        pass
+
+    @abc.abstractproperty
+    def isBot(self) -> bool:
+        pass
+
+    @abc.abstractproperty
+    def isPinned(self) -> bool:
+        pass
+
 
 class TelegramDialog(Dialog_):
     def __init__(self, dialog: Dialog):
@@ -22,3 +38,18 @@ class TelegramDialog(Dialog_):
 
     def archive(self):
         self._dialog.archive()
+
+    def archived(self) -> bool:
+        return self._dialog.archived()
+
+    @property
+    def name(self) -> str:
+        return self._dialog.name
+
+    @property
+    def isBot(self) -> bool:
+        return self._dialog.is_user and self._dialog.entity.bot
+
+    @property
+    def isPinned(self) -> bool:
+        return self._dialog.pinned

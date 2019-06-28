@@ -1,7 +1,7 @@
 import abc
 from telethon.sync import TelegramClient
 from typing import Iterable
-from dialog import Dialog_, TelegramDialog
+from src._internal.telethon_.dialog import Dialog_, TelegramDialog
 
 
 class DialogSource(abc.ABC):
