@@ -7,7 +7,7 @@ Charon is a simple tool built with python, that helps you manage your telegram c
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install charon.
 
 ```bash
-pip install charon
+pip install dk.charon
 ```
 
 ## Usage
@@ -32,6 +32,7 @@ Any pull requests are welcome, including:
 - refactoring
 - test coverage
 - new features
+- CI setup
 
 For major changes, please open an issue first to discuss what you would like to change.
 

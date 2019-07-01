@@ -4,14 +4,14 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='charon',
+    name='dk.charon',
     author="Danil Kabanov",
     author_email="madetara@yandex.com",
     description="Tool for managing telegram chats",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/madetara/charon",
-    version='1.0',
+    version='0.1',
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
