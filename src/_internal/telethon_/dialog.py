@@ -9,7 +9,7 @@ class Dialog_(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def archive(self):
+    def archive(self, folder: int = 1):
         pass
 
     @abc.abstractmethod
@@ -36,8 +36,8 @@ class TelegramDialog(Dialog_):
     def lastMessage(self) -> date:
         return self._dialog.date.date()
 
-    def archive(self):
-        self._dialog.archive()
+    def archive(self, folder: int = 1):
+        self._dialog.archive(folder)
 
     def archived(self) -> bool:
         return self._dialog.archived()

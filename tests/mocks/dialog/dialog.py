@@ -18,7 +18,7 @@ class DialogMock(Dialog_):
     def lastMessage(self) -> date:
         return self._last_message
 
-    def archive(self):
+    def archive(self, folder: int = 1):
         self._archived = not self._archived
 
     def archived(self) -> bool:

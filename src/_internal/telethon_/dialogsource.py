@@ -12,12 +12,14 @@ class DialogSource(abc.ABC):
 
 class TelegramDialogSource(DialogSource):
     def __init__(self, api_id: int, api_hash: str):
-        self._client = TelegramClient('anon', api_id, api_hash)
+        self._client = TelegramClient(
+            session=None, api_id=api_id, api_hash=api_hash).start()
 
     def __enter__(self):
         return self
 
     def __exit__(self, ecx_type, ecx_value, traceback):
+        self._client.log_out()
         self._client.disconnect()
 
     def getDialogs(self) -> Iterable[Dialog_]:

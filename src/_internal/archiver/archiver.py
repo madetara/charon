@@ -6,6 +6,7 @@ from typing import Callable
 
 def execute(source: DialogSource,
             log: Logger,
+            folder: int = 1,
             time_limit_days: int = 15,
             filter_: Callable[[Dialog_], bool] = lambda x: True):
     log.info('Starting archiving chats.')
@@ -17,8 +18,8 @@ def execute(source: DialogSource,
         last_message_date = dialog.lastMessage()
 
         if (today - last_message_date).days >= time_limit_days:
-            log.info('- archiving ' + str(dialog.name.encode('utf-8')))
-            dialog.archive()
+            log.info('- moving' + ' ' + dialog.name)
+            dialog.archive(folder)
             total_archived += 1
 
-    print('Total ' + str(total_archived) + ' chats archived.')
+    print('Total ' + str(total_archived) + ' chats moved.')

@@ -4,16 +4,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pytest = "*"
 flake8 = "*"
 autopep8 = "*"
 rope = "*"
 pylint = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [packages]
 telethon = "*"
-pytest = "*"
-pytest-cov = "*"
 click = "*"
 
 [requires]
